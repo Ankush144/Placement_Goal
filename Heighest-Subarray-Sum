@@ -1,0 +1,23 @@
+//this code is O(N*N*N) solution of subarray sum
+#include<bits/stdc++.h>
+#include <iostream>
+using namespace std;
+int main() {
+	int arr[]  = {-9,9,-2,-8,2,6,-8,4,0,-2};
+	// your code goes here
+	int sum =0;
+    int maxm=INT_MIN;
+	for(int i=0;i<sizeof(arr)/sizeof(int);i++){
+		for(int j=i;j<sizeof(arr)/sizeof(int);j++){
+			sum=0;
+			for(int k=i;k<=j;k++){
+				sum = sum + arr[k];
+			}
+			maxm = max(maxm,sum);
+		}
+	}
+	//O(N*N*N)  
+	cout<<maxm;
+	return 0;
+}
+
